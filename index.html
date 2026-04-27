@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diya Nilesh Desai – Data Science Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface2: #1a1a26;
+    --accent: #7effd4;
+    --accent2: #ff6b6b;
+    --accent3: #ffd166;
+    --text: #e8e8f0;
+    --muted: #6b6b85;
+    --border: rgba(126,255,212,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 4rem;
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 1.1rem;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 8rem 4rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(126,255,212,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(126,255,212,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-glow {
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(126,255,212,0.08) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-content { position: relative; max-width: 800px; }
+  .hero-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: 1px solid rgba(126,255,212,0.3);
+    padding: 0.4rem 1rem;
+    border-radius: 2px;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-name {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    animation: fadeUp 0.6s ease 0.1s both;
+  }
+  .hero-name span { color: var(--accent); }
+  .hero-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s ease 0.2s both;
+  }
+  .hero-desc {
+    font-size: 1.05rem;
+    color: #9999b5;
+    max-width: 560px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    animation: fadeUp 0.6s ease 0.3s both;
+  }
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp 0.6s ease 0.4s both;
+  }
+  .btn {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #0a0a0f;
+    font-weight: 600;
+    border: none;
+  }
+  .btn-primary:hover { background: #5de8bc; transform: translateY(-2px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid rgba(126,255,212,0.4);
+  }
+  .btn-secondary:hover { border-color: var(--accent); background: rgba(126,255,212,0.05); }
+
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 4rem;
+    animation: fadeUp 0.6s ease 0.5s both;
+  }
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem; font-weight: 800;
+    color: var(--accent);
+  }
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 6rem 4rem; }
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    margin-bottom: 3rem;
+    line-height: 1.1;
+  }
+
+  /* ─── ABOUT ─── */
+  .about { background: var(--surface); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .about-text p {
+    color: #9999b5;
+    line-height: 1.9;
+    margin-bottom: 1.2rem;
+  }
+  .about-details { display: flex; flex-direction: column; gap: 1rem; }
+  .detail-row {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 1rem 1.2rem;
+    background: var(--surface2);
+    border-left: 2px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+  }
+  .detail-icon { font-size: 1.2rem; margin-top: 0.1rem; }
+  .detail-key {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 0.2rem;
+  }
+  .detail-val { font-size: 0.95rem; color: var(--text); }
+
+  /* ─── SKILLS ─── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .skill-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.8rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .skill-card:hover { border-color: rgba(126,255,212,0.4); transform: translateY(-4px); }
+  .skill-card-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+  .skill-card-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    padding: 0.3rem 0.7rem;
+    background: rgba(126,255,212,0.07);
+    color: #9999b5;
+    border: 1px solid rgba(126,255,212,0.15);
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── PROJECTS ─── */
+  .projects { background: var(--surface); }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+  .project-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2rem;
+    display: flex; flex-direction: column; gap: 1rem;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .project-card:hover::before { opacity: 1; }
+  .project-card:hover { border-color: rgba(126,255,212,0.3); transform: translateY(-4px); }
+  .project-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--accent3);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .project-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .project-desc { font-size: 0.9rem; color: #7777a0; line-height: 1.7; }
+  .project-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
+  .tech-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    padding: 0.25rem 0.6rem;
+    background: rgba(255,209,102,0.08);
+    color: var(--accent3);
+    border: 1px solid rgba(255,209,102,0.2);
+    border-radius: 2px;
+  }
+
+  /* ─── CERTIFICATIONS ─── */
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+  .cert-card {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1.2rem 1.4rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition: border-color 0.2s;
+  }
+  .cert-card:hover { border-color: rgba(126,255,212,0.3); }
+  .cert-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .cert-name { font-size: 0.88rem; line-height: 1.4; color: #b0b0cc; }
+  .cert-issuer {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.2rem;
+  }
+
+  /* ─── CONTACT ─── */
+  .contact { background: var(--surface); text-align: center; }
+  .contact .section-title { margin-bottom: 1rem; }
+  .contact-sub { color: var(--muted); margin-bottom: 3rem; font-size: 1.05rem; }
+  .contact-links {
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem;
+  }
+  .contact-link {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.85rem 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    letter-spacing: 0.06em;
+    transition: all 0.2s;
+  }
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); background: rgba(126,255,212,0.04); }
+
+  /* ─── AWARD BANNER ─── */
+  .award-banner {
+    display: flex; align-items: center; gap: 1.5rem;
+    background: linear-gradient(135deg, rgba(255,209,102,0.08), rgba(255,107,107,0.05));
+    border: 1px solid rgba(255,209,102,0.25);
+    border-radius: 4px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 3rem;
+  }
+  .award-icon { font-size: 2rem; }
+  .award-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--accent3);
+    margin-bottom: 0.2rem;
+  }
+  .award-sub { font-size: 0.85rem; color: var(--muted); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 2rem 4rem;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    section { padding: 4rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 2rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">DND.ds</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-tag">📍 Available for Apprenticeship · 2026 Graduate</div>
+    <h1 class="hero-name">Diya<br><span>Desai</span></h1>
+    <p class="hero-title">Data Science · ML · Computer Vision</p>
+    <p class="hero-desc">
+      AI/ML-focused Data Science undergraduate turning raw data into intelligent systems.
+      From YOLOv8 models to time-series forecasts — I build things that actually work.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+      <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">4+</div>
+        <div class="stat-label">Projects Built</div>
+      </div>
+      <div>
+        <div class="stat-num">8.05</div>
+        <div class="stat-label">CGPA / 10</div>
+      </div>
+      <div>
+        <div class="stat-num">7+</div>
+        <div class="stat-label">Certifications</div>
+      </div>
+      <div>
+        <div class="stat-num">🥉</div>
+        <div class="stat-label">Hackathon Award</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-label">// 01 · About</div>
+  <h2 class="section-title">The Story So Far</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        I'm a final-year B.Sc. Data Science student at Navrachana University (graduating 2026),
+        passionate about building AI systems that solve real-world problems — from smart city
+        infrastructure to renewable energy forecasting.
+      </p>
+      <p>
+        My work spans the full ML pipeline: data collection and annotation, model training and
+        evaluation, and deploying interactive applications. I'm especially drawn to computer vision
+        and applied deep learning.
+      </p>
+      <p>
+        When I'm not training models, I'm exploring new datasets, earning certifications, or competing in hackathons.
+        My 2nd Runner-Up finish at the Indigenous Hackathon 2025 with a real-time parking detection system
+        is one of my proudest moments so far.
+      </p>
+    </div>
+    <div class="about-details">
+      <div class="detail-row">
+        <div class="detail-icon">🎓</div>
+        <div>
+          <div class="detail-key">Education</div>
+          <div class="detail-val">B.Sc. Data Science · Navrachana University · 2026</div>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-icon">📊</div>
+        <div>
+          <div class="detail-key">GPA</div>
+          <div class="detail-val">8.05 / 10</div>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-icon">📧</div>
+        <div>
+          <div class="detail-key">Email</div>
+          <div class="detail-val">desaidiya041@gmail.com</div>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-icon">📱</div>
+        <div>
+          <div class="detail-key">Phone</div>
+          <div class="detail-val">+91 97376 38128</div>
+        </div>
+      </div>
+      <div class="detail-row">
+        <div class="detail-icon">💡</div>
+        <div>
+          <div class="detail-key">Interests</div>
+          <div class="detail-val">Computer Vision · MLOps · Applied AI · Smart Cities</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">// 02 · Skills</div>
+  <h2 class="section-title">Technical Arsenal</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-card-icon">🐍</div>
+      <div class="skill-card-title">Programming</div>
+      <div class="skill-tags">
+        <span class="tag">Python</span>
+        <span class="tag">SQL</span>
+        <span class="tag">R</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon">🤖</div>
+      <div class="skill-card-title">Machine Learning</div>
+      <div class="skill-tags">
+        <span class="tag">Supervised Learning</span>
+        <span class="tag">Unsupervised Learning</span>
+        <span class="tag">Regression</span>
+        <span class="tag">Classification</span>
+        <span class="tag">Feature Engineering</span>
+        <span class="tag">Model Evaluation</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon">👁️</div>
+      <div class="skill-card-title">Deep Learning & CV</div>
+      <div class="skill-tags">
+        <span class="tag">YOLOv8</span>
+        <span class="tag">OpenCV</span>
+        <span class="tag">CNN</span>
+        <span class="tag">Image Annotation</span>
+        <span class="tag">Data Augmentation</span>
+        <span class="tag">Roboflow</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon">📈</div>
+      <div class="skill-card-title">Time Series</div>
+      <div class="skill-tags">
+        <span class="tag">ARIMA</span>
+        <span class="tag">Holt-Winters</span>
+        <span class="tag">Forecasting</span>
+        <span class="tag">Seasonality Analysis</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon">📊</div>
+      <div class="skill-card-title">Data Visualization</div>
+      <div class="skill-tags">
+        <span class="tag">Power BI</span>
+        <span class="tag">Tableau</span>
+        <span class="tag">Excel</span>
+        <span class="tag">DAX</span>
+        <span class="tag">Matplotlib</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon">☁️</div>
+      <div class="skill-card-title">Cloud & Tools</div>
+      <div class="skill-tags">
+        <span class="tag">AWS</span>
+        <span class="tag">Streamlit</span>
+        <span class="tag">Git</span>
+        <span class="tag">GitHub</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="section-label">// 03 · Projects</div>
+  <h2 class="section-title">What I've Built</h2>
+
+  <div class="award-banner">
+    <div class="award-icon">🏆</div>
+    <div>
+      <div class="award-title">Indigenous Hackathon 2025 — 2nd Runner-Up</div>
+      <div class="award-sub">Smart Parking System using Computer Vision · March 2025</div>
+    </div>
+  </div>
+
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-badge">🥉 Hackathon Winner</div>
+      <div class="project-name">Smart Parking System – Computer Vision</div>
+      <p class="project-desc">
+        Real-time parking occupancy detection from images and video feeds. Trained YOLOv8 to classify vacant vs occupied slots, enabling smart city traffic optimization.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">YOLOv8</span>
+        <span class="tech-tag">OpenCV</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-badge">🔍 Object Detection</div>
+      <div class="project-name">Pothole Detection Model</div>
+      <p class="project-desc">
+        Custom-annotated dataset for road infrastructure monitoring. Applied data augmentation and hyperparameter tuning for robust real-world detection.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">YOLOv8</span>
+        <span class="tech-tag">Roboflow</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-badge">😴 Safety AI</div>
+      <div class="project-name">Driver Drowsiness Detection</div>
+      <p class="project-desc">
+        Deep learning system using CNN and facial landmark detection (EAR technique) to classify driver alertness states for real-time video monitoring.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">CNN</span>
+        <span class="tech-tag">OpenCV</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-badge">⚡ Forecasting</div>
+      <div class="project-name">Renewable Energy Capacity Forecasting</div>
+      <p class="project-desc">
+        State-wise solar and wind capacity predictions over 2–3 year horizon. Interactive Streamlit app for visualizing and comparing future energy scenarios.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">ARIMA</span>
+        <span class="tech-tag">Holt-Winters</span>
+        <span class="tech-tag">Streamlit</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-badge">📊 Dashboard</div>
+      <div class="project-name">Nutritional Health Analysis Dashboard</div>
+      <p class="project-desc">
+        Interactive Power BI dashboard with custom DAX measures tracking nutrient-based KPIs, with brand-wise and category-wise consumer insights.
+      </p>
+      <div class="project-tech">
+        <span class="tech-tag">Power BI</span>
+        <span class="tech-tag">DAX</span>
+        <span class="tech-tag">Excel</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-label">// 04 · Certifications</div>
+  <h2 class="section-title">Credentials</h2>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="cert-icon">📋</div>
+      <div>
+        <div class="cert-issuer">Deloitte Australia</div>
+        <div class="cert-name">Data Analytics Job Simulation</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🔵</div>
+      <div>
+        <div class="cert-issuer">IBM</div>
+        <div class="cert-name">Getting Started with Data</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">☁️</div>
+      <div>
+        <div class="cert-issuer">AWS Academy</div>
+        <div class="cert-name">Cloud Foundations</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🗄️</div>
+      <div>
+        <div class="cert-issuer">AWS Academy</div>
+        <div class="cert-name">Data Engineering</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🤖</div>
+      <div>
+        <div class="cert-issuer">AWS Academy</div>
+        <div class="cert-name">Machine Learning Foundations</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">💬</div>
+      <div>
+        <div class="cert-issuer">AWS</div>
+        <div class="cert-name">ML for Natural Language Processing</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">📉</div>
+      <div>
+        <div class="cert-issuer">Tata</div>
+        <div class="cert-name">Data Visualization: Empowering Business with Effective Insights</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-label">// 05 · Contact</div>
+  <h2 class="section-title">Let's Connect</h2>
+  <p class="contact-sub">Open to apprenticeships, internships, and collaborations.</p>
+  <div class="contact-links">
+    <a href="mailto:desaidiya041@gmail.com" class="contact-link">
+      ✉️ desaidiya041@gmail.com
+    </a>
+    <a href="https://www.linkedin.com/in/diyadesai-080339311/" target="_blank" class="contact-link">
+      💼 LinkedIn
+    </a>
+    <a href="https://github.com/diyadesai-cell" target="_blank" class="contact-link">
+      🐱 GitHub
+    </a>
+    <a href="tel:+919737638128" class="contact-link">
+      📱 +91 97376 38128
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Diya Nilesh Desai</span>
+  <span>B.Sc. Data Science · Navrachana University · 2026</span>
+</footer>
+
+</body>
+</html>
