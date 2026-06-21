@@ -103,7 +103,6 @@ nav{
 
 .hero-left{position:relative;z-index:1;}
 
-/* subtle tag — no hype */
 .hero-tag{
   display:inline-flex;align-items:center;gap:0.5rem;
   font-family:'JetBrains Mono',monospace;font-size:0.65rem;
@@ -146,7 +145,6 @@ nav{
 .btn-ghost{background:transparent;color:var(--text2);border:1px solid var(--border);}
 .btn-ghost:hover{color:var(--accent);border-color:var(--accent);background:var(--tag-bg);transform:translateY(-2px);}
 
-/* hero right cards */
 .hero-right{position:relative;z-index:1;display:flex;flex-direction:column;gap:1rem;animation:rise 0.8s var(--ease) 0.2s both;}
 .float-card{
   background:var(--card);border:1px solid var(--border);
@@ -236,6 +234,7 @@ section{padding:5.5rem 4.5rem;}
   transition:border-color 0.3s var(--ease),transform 0.3s var(--ease),box-shadow 0.3s var(--ease);
   cursor:default;
 }
+.p-card.featured{border-color:rgba(157,127,245,0.3);}
 .p-card:hover{
   border-color:var(--accent);
   transform:translateY(-6px);
@@ -243,7 +242,6 @@ section{padding:5.5rem 4.5rem;}
   z-index:10;
 }
 
-/* card body always visible */
 .p-body{padding:1.6rem;}
 .p-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;gap:0.4rem;flex-wrap:wrap;}
 .p-badge{font-family:'JetBrains Mono',monospace;font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:100px;}
@@ -252,19 +250,19 @@ section{padding:5.5rem 4.5rem;}
 .pb-dl{background:rgba(232,126,173,0.08);color:var(--pink);border:1px solid rgba(232,126,173,0.2);}
 .pb-ts{background:rgba(94,207,154,0.08);color:var(--green);border:1px solid rgba(94,207,154,0.2);}
 .pb-grp{background:rgba(94,207,154,0.06);color:var(--green);border:1px solid rgba(94,207,154,0.15);font-size:0.52rem;}
+.pb-genai{background:rgba(157,127,245,0.12);color:var(--accent);border:1px solid rgba(157,127,245,0.3);}
 .p-name{font-size:1.08rem;font-weight:700;letter-spacing:-0.015em;margin-bottom:0.45rem;line-height:1.25;}
 .p-short{font-size:0.84rem;color:var(--text2);line-height:1.68;margin-bottom:0.9rem;font-weight:400;}
 .p-tech{display:flex;flex-wrap:wrap;gap:0.28rem;}
 .ptag{font-family:'JetBrains Mono',monospace;font-size:0.56rem;padding:0.17rem 0.5rem;background:rgba(240,192,96,0.06);color:var(--gold);border:1px solid rgba(240,192,96,0.16);border-radius:4px;}
 
-/* smooth slide-in popup at bottom of card */
 .p-popup{
   padding:0 1.6rem;
   max-height:0;overflow:hidden;
   transition:max-height 0.4s var(--ease),padding 0.3s;
 }
 .p-card:hover .p-popup{
-  max-height:220px;
+  max-height:260px;
   padding:0 1.6rem 1.4rem;
 }
 .popup-divider{height:1px;background:var(--border);margin-bottom:1rem;}
@@ -372,11 +370,11 @@ footer{padding:1.5rem 4.5rem;border-top:1px solid var(--border2);display:flex;ju
   <div class="hero-left">
     <div class="hero-tag"><span class="tag-dot"></span>2026 Graduate &nbsp;·&nbsp; Available</div>
     <h1 class="hero-name">Diya<br><span>Desai.</span></h1>
-    <p class="hero-sub">Data Science &nbsp;·&nbsp; Machine Learning &nbsp;·&nbsp; Computer Vision</p>
-    <p class="hero-desc">Final-year B.Sc. Data Science student at Navrachana University. I work across the ML pipeline — from data and model training to building dashboards and detection systems.</p>
+    <p class="hero-sub">Data Science &nbsp;·&nbsp; Machine Learning &nbsp;·&nbsp; Generative AI</p>
+    <p class="hero-desc">B.Sc. Data Science graduate from Navrachana University. I work across the ML and GenAI pipeline — from RAG applications and computer vision to forecasting and dashboards.</p>
     <div class="cta-row">
       <a href="#projects" class="btn btn-fill">View Projects</a>
-      <a href="Diya_Desai..pdf" download class="btn btn-ghost">⬇ Resume</a>
+      <a href="Diya_Desai_DataScience_General_v2.pdf" download class="btn btn-ghost">⬇ Resume</a>
       <a href="#contact" class="btn btn-ghost">Contact</a>
     </div>
   </div>
@@ -390,12 +388,12 @@ footer{padding:1.5rem 4.5rem;border-top:1px solid var(--border2);display:flex;ju
     <div class="fc-row">
       <div class="float-card">
         <div class="fc-label">GPA</div>
-        <div class="fc-val">8.05</div>
+        <div class="fc-val">8.16</div>
         <div class="fc-sub">out of 10</div>
       </div>
       <div class="float-card">
         <div class="fc-label">Projects</div>
-        <div class="fc-val">5+</div>
+        <div class="fc-val">7+</div>
         <div class="fc-sub">built</div>
       </div>
     </div>
@@ -415,15 +413,15 @@ footer{padding:1.5rem 4.5rem;border-top:1px solid var(--border2);display:flex;ju
   <h2 class="s-title">The story<br><em>so far</em></h2>
   <div class="about-grid">
     <div class="about-text reveal">
-      <p>I'm a final-year <strong>B.Sc. Data Science</strong> student at Navrachana University, graduating in 2026. My experience spans the full ML lifecycle — from annotating datasets and training models to building dashboards and detection pipelines.</p>
-      <p>I'm most interested in <strong>computer vision and applied deep learning</strong>. I've worked on YOLOv8-based object detection, time-series forecasting, and data visualization projects across different domains.</p>
-      <p>I recently completed a <strong>4-month Python with Django internship</strong> at BrainyBeam Info Tech, where I worked on backend web development and REST APIs in a professional team setting.</p>
+      <p>I'm a recent <strong>B.Sc. Data Science</strong> graduate from Navrachana University (CGPA 8.16/10). My experience spans the full ML and GenAI lifecycle — from data preprocessing and model training to building RAG applications and interactive dashboards.</p>
+      <p>I'm most interested in <strong>Generative AI and computer vision</strong>. I've built a full-stack RAG document Q&A system using LangChain and HuggingFace, YOLOv8-based object detection, time-series forecasting, and data visualization projects across different domains.</p>
+      <p>I completed a <strong>Python Developer internship</strong> at BrainlyBeam InfoTech, where I worked on data processing workflows and collaborated with senior developers in a professional team setting.</p>
       <p>I tend to think about the <strong>problem first, tools second</strong> — understanding the context before jumping to a solution.</p>
     </div>
     <div class="detail-list reveal reveal-d1">
       <div class="d-row"><div class="d-ico">🎓</div><div><div class="d-k">Education</div><div class="d-v">B.Sc. Data Science · Navrachana University · 2026</div></div></div>
-      <div class="d-row"><div class="d-ico">📊</div><div><div class="d-k">GPA</div><div class="d-v">8.05 / 10</div></div></div>
-      <div class="d-row"><div class="d-ico">💼</div><div><div class="d-k">Latest Role</div><div class="d-v">Python with Django Intern · BrainyBeam Info Tech</div></div></div>
+      <div class="d-row"><div class="d-ico">📊</div><div><div class="d-k">GPA</div><div class="d-v">8.16 / 10</div></div></div>
+      <div class="d-row"><div class="d-ico">💼</div><div><div class="d-k">Latest Role</div><div class="d-v">Python Developer Intern · BrainlyBeam InfoTech</div></div></div>
       <div class="d-row"><div class="d-ico">📧</div><div><div class="d-k">Email</div><div class="d-v">desaidiya041@gmail.com</div></div></div>
       <div class="d-row"><div class="d-ico">📍</div><div><div class="d-k">Location</div><div class="d-v">Gujarat, India</div></div></div>
     </div>
@@ -438,12 +436,12 @@ footer{padding:1.5rem 4.5rem;border-top:1px solid var(--border2);display:flex;ju
   <h2 class="s-title">Where I've<br><em>worked</em></h2>
   <div class="exp-wrap reveal">
     <div class="exp-item">
-      <div class="exp-time">Jan 2026<br>— Apr 2026<br><br>4 months</div>
+      <div class="exp-time">Jan 2026<br>— May 2026<br><br>5 months</div>
       <div class="exp-right">
         <div class="exp-dot"></div>
-        <div class="exp-title">Python with Django Intern</div>
-        <div class="exp-co">BrainyBeam Info Tech Pvt. Ltd.</div>
-        <div class="exp-desc">Worked on backend web development using Python and Django. Built RESTful APIs, worked with relational databases, and contributed to production code in a team environment.</div>
+        <div class="exp-title">Python Developer Intern</div>
+        <div class="exp-co">BrainlyBeam InfoTech Pvt. Ltd.</div>
+        <div class="exp-desc">Developed and maintained Python scripts supporting data collection, processing, and transformation workflows. Applied data cleaning, validation, and preprocessing on structured datasets, managed version control with Git/GitHub, and collaborated with senior developers in an agile team environment.</div>
       </div>
     </div>
   </div>
@@ -459,44 +457,44 @@ footer{padding:1.5rem 4.5rem;border-top:1px solid var(--border2);display:flex;ju
     <div class="sk-card reveal">
       <div class="sk-top"><span class="sk-ico">🐍</span><span class="cert-badge cb-self">Project-proven</span></div>
       <div class="sk-name">Programming</div>
-      <div class="sk-tags"><span class="stag">Python</span><span class="stag">SQL</span><span class="stag">R</span><span class="stag">Django</span></div>
-      <div class="cert-line">Used across <span>all 5 projects</span> + internship</div>
+      <div class="sk-tags"><span class="stag">Python</span><span class="stag">SQL</span><span class="stag">R</span></div>
+      <div class="cert-line">Used across <span>all projects</span> + internship</div>
     </div>
     <div class="sk-card reveal reveal-d1">
+      <div class="sk-top"><span class="sk-ico">✨</span><span class="cert-badge cb-self">Flagship project</span></div>
+      <div class="sk-name">Generative AI</div>
+      <div class="sk-tags"><span class="stag">RAG</span><span class="stag">LangChain</span><span class="stag">HuggingFace</span><span class="stag">Vector DBs</span><span class="stag">ChromaDB</span><span class="stag">LLM APIs</span><span class="stag">FastAPI</span><span class="stag">Prompt Engineering</span></div>
+      <div class="cert-line">Built <span>Petal AI</span> — full-stack RAG Q&A system</div>
+    </div>
+    <div class="sk-card reveal reveal-d2">
       <div class="sk-top"><span class="sk-ico">🤖</span><span class="cert-badge cb-aws">AWS Certified</span></div>
       <div class="sk-name">Machine Learning</div>
-      <div class="sk-tags"><span class="stag">Supervised Learning</span><span class="stag">Unsupervised</span><span class="stag">Regression</span><span class="stag">Classification</span><span class="stag">Feature Eng.</span><span class="stag">Model Evaluation</span></div>
+      <div class="sk-tags"><span class="stag">Supervised Learning</span><span class="stag">Unsupervised</span><span class="stag">Regression</span><span class="stag">Classification</span><span class="stag">Clustering</span><span class="stag">Feature Eng.</span></div>
       <div class="cert-line">Backed by <span>AWS ML Foundations</span> certification</div>
     </div>
-    <div class="sk-card reveal reveal-d2">
+    <div class="sk-card reveal">
       <div class="sk-top"><span class="sk-ico">👁️</span><span class="cert-badge cb-self">Hackathon-proven</span></div>
       <div class="sk-name">Deep Learning & Computer Vision</div>
-      <div class="sk-tags"><span class="stag">YOLOv8</span><span class="stag">OpenCV</span><span class="stag">CNN</span><span class="stag">Image Annotation</span><span class="stag">Data Augmentation</span><span class="stag">Roboflow</span></div>
+      <div class="sk-tags"><span class="stag">YOLOv8</span><span class="stag">OpenCV</span><span class="stag">CNN</span><span class="stag">Image Annotation</span><span class="stag">Data Augmentation</span></div>
       <div class="cert-line">Won <span>2nd place</span> at Indigenous Hackathon 2025</div>
     </div>
-    <div class="sk-card reveal">
+    <div class="sk-card reveal reveal-d1">
       <div class="sk-top"><span class="sk-ico">📈</span><span class="cert-badge cb-self">Project-proven</span></div>
       <div class="sk-name">Time Series & Forecasting</div>
-      <div class="sk-tags"><span class="stag">ARIMA</span><span class="stag">Holt-Winters</span><span class="stag">Forecasting</span><span class="stag">Seasonality Analysis</span><span class="stag">Streamlit</span></div>
+      <div class="sk-tags"><span class="stag">ARIMA</span><span class="stag">Holt-Winters</span><span class="stag">Demand Forecasting</span><span class="stag">Streamlit</span></div>
       <div class="cert-line">Applied in <span>Renewable Energy</span> project</div>
     </div>
-    <div class="sk-card reveal reveal-d1">
+    <div class="sk-card reveal reveal-d2">
       <div class="sk-top"><span class="sk-ico">📊</span><span class="cert-badge cb-tata">Tata Certified</span></div>
       <div class="sk-name">Data Visualization & Analytics</div>
-      <div class="sk-tags"><span class="stag">Power BI</span><span class="stag">Tableau</span><span class="stag">Excel</span><span class="stag">Matplotlib</span><span class="stag">Statistical Analysis</span></div>
+      <div class="sk-tags"><span class="stag">Power BI</span><span class="stag">Tableau</span><span class="stag">Excel</span><span class="stag">Matplotlib</span><span class="stag">EDA</span></div>
       <div class="cert-line">Backed by <span>Tata Data Visualization</span> + Deloitte simulation</div>
     </div>
-    <div class="sk-card reveal reveal-d2">
+    <div class="sk-card reveal">
       <div class="sk-top"><span class="sk-ico">☁️</span><span class="cert-badge cb-aws">AWS Certified</span></div>
       <div class="sk-name">Cloud & Data Engineering</div>
-      <div class="sk-tags"><span class="stag">AWS Cloud</span><span class="stag">Data Engineering</span><span class="stag">ML on Cloud</span><span class="stag">Git</span><span class="stag">GitHub</span></div>
+      <div class="sk-tags"><span class="stag">AWS Cloud</span><span class="stag">Data Engineering</span><span class="stag">Git</span><span class="stag">GitHub</span><span class="stag">Roboflow</span></div>
       <div class="cert-line">3× <span>AWS Academy</span> certifications</div>
-    </div>
-    <div class="sk-card reveal">
-      <div class="sk-top"><span class="sk-ico">🌐</span><span class="cert-badge cb-self">Internship-proven</span></div>
-      <div class="sk-name">Web Development</div>
-      <div class="sk-tags"><span class="stag">Django</span><span class="stag">REST APIs</span><span class="stag">Python Backend</span><span class="stag">Databases</span></div>
-      <div class="cert-line">Applied at <span>BrainyBeam Info Tech</span> internship</div>
     </div>
     <div class="sk-card reveal reveal-d1">
       <div class="sk-top"><span class="sk-ico">💬</span><span class="cert-badge cb-aws">AWS Certified</span></div>
@@ -515,6 +513,28 @@ footer{padding:1.5rem 4.5rem;border-top:1px solid var(--border2);display:flex;ju
   <h2 class="s-title">Things I've<br><em>built</em></h2>
   <div class="proj-grid">
 
+    <!-- Petal AI - flagship, first -->
+    <div class="p-card featured">
+      <div class="p-body">
+        <div class="p-top">
+          <span class="p-badge pb-genai">✨ Flagship</span>
+        </div>
+        <div class="p-name">Petal AI — Document Q&A Assistant</div>
+        <p class="p-short">Full-stack RAG application for conversational Q&A over any uploaded PDF, grounded in document context.</p>
+        <div class="p-tech"><span class="ptag">LangChain</span><span class="ptag">HuggingFace</span><span class="ptag">ChromaDB</span><span class="ptag">FastAPI</span></div>
+      </div>
+      <div class="p-popup">
+        <div class="popup-divider"></div>
+        <div class="popup-head">What I did</div>
+        <ul class="popup-items">
+          <li>Built an end-to-end RAG pipeline: PDF parsing, text chunking, embedding generation, and vector storage</li>
+          <li>Integrated LangChain conversational memory to resolve follow-up questions using chat history</li>
+          <li>Used Groq Llama 3.3 70B for context-grounded, hallucination-free answer generation</li>
+          <li>Built a FastAPI backend with upload/ask endpoints and a custom chat UI</li>
+        </ul>
+      </div>
+    </div>
+
     <div class="p-card">
       <div class="p-body">
         <div class="p-top">
@@ -531,7 +551,7 @@ footer{padding:1.5rem 4.5rem;border-top:1px solid var(--border2);display:flex;ju
         <ul class="popup-items">
           <li>Trained a YOLOv8 model to detect vacant vs occupied parking slots from images and video</li>
           <li>Annotated and preprocessed image datasets to improve detection accuracy</li>
-          <li>Built a classification pipeline for smart city parking management</li>
+          <li>Built a complete ML pipeline from annotation through training and inference</li>
           <li>Won 2nd Runner-Up at Indigenous Hackathon, March 2025</li>
         </ul>
       </div>
@@ -539,18 +559,18 @@ footer{padding:1.5rem 4.5rem;border-top:1px solid var(--border2);display:flex;ju
 
     <div class="p-card">
       <div class="p-body">
-        <div class="p-top"><span class="p-badge pb-cv">🔍 Detection</span></div>
-        <div class="p-name">Pothole Detection Model</div>
-        <p class="p-short">Custom-annotated dataset and object detection model for road infrastructure monitoring.</p>
-        <div class="p-tech"><span class="ptag">Python</span><span class="ptag">Roboflow</span><span class="ptag">Object Detection</span></div>
+        <div class="p-top"><span class="p-badge pb-cv">✈️ Predictive ML</span></div>
+        <div class="p-name">Flight Delay Analysis & Prediction</div>
+        <p class="p-short">Analysis and prediction of flight delays across 539,383 flights using airline, time, and route features.</p>
+        <div class="p-tech"><span class="ptag">Python</span><span class="ptag">Scikit-learn</span><span class="ptag">Plotly</span></div>
       </div>
       <div class="p-popup">
         <div class="popup-divider"></div>
         <div class="popup-head">What I did</div>
         <ul class="popup-items">
-          <li>Created and manually annotated a custom pothole dataset for real-world road conditions</li>
-          <li>Applied data augmentation and hyperparameter tuning to improve model robustness</li>
-          <li>Trained and evaluated the detection model for automated infrastructure monitoring</li>
+          <li>Found 44.5% of flights were delayed, with evening flights delayed more than morning ones</li>
+          <li>Built a Logistic Regression model to predict delays based on airline, day, and flight length</li>
+          <li>Identified improvement paths — Random Forest, weather data, SMOTE — to push accuracy from 63% to ~75–80%</li>
         </ul>
       </div>
     </div>
@@ -566,9 +586,9 @@ footer{padding:1.5rem 4.5rem;border-top:1px solid var(--border2);display:flex;ju
         <div class="popup-divider"></div>
         <div class="popup-head">What I did</div>
         <ul class="popup-items">
-          <li>Built a CNN to classify driver states (alert vs drowsy) from facial features</li>
-          <li>Integrated Eye Aspect Ratio (EAR) for robust landmark-based detection</li>
-          <li>Designed for real-time video stream processing in live monitoring applications</li>
+          <li>Trained a CNN on facial and eye-region datasets to classify driver states in real time</li>
+          <li>Integrated Eye Aspect Ratio (EAR) and facial landmark detection for robustness</li>
+          <li>Designed for live video stream processing in real-time monitoring</li>
         </ul>
       </div>
     </div>
@@ -589,7 +609,7 @@ footer{padding:1.5rem 4.5rem;border-top:1px solid var(--border2);display:flex;ju
         <ul class="popup-items">
           <li>Analyzed historical datasets to identify growth patterns and seasonality in energy data</li>
           <li>Built ARIMA and Holt-Winters models for solar and wind capacity forecasting by state</li>
-          <li>Built an interactive Streamlit dashboard for scenario comparison and visualization</li>
+          <li>Built an interactive Streamlit dashboard for scenario comparison</li>
         </ul>
       </div>
     </div>
@@ -606,8 +626,8 @@ footer{padding:1.5rem 4.5rem;border-top:1px solid var(--border2);display:flex;ju
         <div class="popup-head">What I did</div>
         <ul class="popup-items">
           <li>Cleaned and structured multi-source retail and public nutrition datasets</li>
-          <li>Built interactive Power BI dashboards with custom measures to track nutrient KPIs</li>
-          <li>Generated brand-wise and category-wise insights for consumer and business decisions</li>
+          <li>Built interactive Power BI dashboards with custom DAX measures to track nutrient KPIs</li>
+          <li>Generated brand-wise and category-wise insights for business decisions</li>
         </ul>
       </div>
     </div>
