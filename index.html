@@ -192,15 +192,18 @@ section{padding:5.5rem 4.5rem;}
 .d-v{font-size:0.87rem;color:var(--text);font-weight:500;line-height:1.4;}
 
 /* ── EXPERIENCE ── */
-.exp-wrap{max-width:660px;}
+.exp-wrap{max-width:760px;}
 .exp-item{display:grid;grid-template-columns:140px 1fr;gap:2rem;padding-bottom:3rem;position:relative;}
 .exp-item:not(:last-child)::after{content:'';position:absolute;left:140px;top:14px;bottom:0;width:1px;background:var(--border);margin-left:calc(2rem + 4px);}
 .exp-time{font-family:'JetBrains Mono',monospace;font-size:0.64rem;color:var(--text3);text-align:right;padding-top:0.3rem;line-height:1.6;}
 .exp-right{padding-left:2.5rem;position:relative;}
-.exp-dot{position:absolute;left:calc(-0.7rem - 1px);top:0.35rem;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--bg2),0 0 0 5px rgba(157,127,245,0.3);}
+.exp-dot{position:absolute;left:calc(-0.7rem - 1px);top:0.35rem;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--bg),0 0 0 5px rgba(157,127,245,0.3);}
 .exp-title{font-size:1.05rem;font-weight:700;margin-bottom:0.15rem;}
 .exp-co{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--pink);letter-spacing:0.08em;margin-bottom:0.65rem;}
 .exp-desc{font-size:0.9rem;color:var(--text2);line-height:1.8;font-weight:400;}
+.exp-list{list-style:none;display:flex;flex-direction:column;gap:0.55rem;}
+.exp-list li{font-size:0.88rem;color:var(--text2);line-height:1.7;padding-left:1.1rem;position:relative;}
+.exp-list li::before{content:'↳';position:absolute;left:0;color:var(--accent);font-size:0.7rem;top:0.12rem;}
 
 /* ── SKILLS ── */
 .skills{background:var(--bg2);}
@@ -262,7 +265,7 @@ section{padding:5.5rem 4.5rem;}
   transition:max-height 0.4s var(--ease),padding 0.3s;
 }
 .p-card:hover .p-popup{
-  max-height:260px;
+  max-height:320px;
   padding:0 1.6rem 1.4rem;
 }
 .popup-divider{height:1px;background:var(--border);margin-bottom:1rem;}
@@ -368,10 +371,10 @@ footer{padding:1.5rem 4.5rem;border-top:1px solid var(--border2);display:flex;ju
   </div>
 
   <div class="hero-left">
-    <div class="hero-tag"><span class="tag-dot"></span>2026 Graduate &nbsp;·&nbsp; Available</div>
+    <div class="hero-tag"><span class="tag-dot"></span>2026 Graduate &nbsp;·&nbsp; AI/ML Intern @ Easy Cater</div>
     <h1 class="hero-name">Diya<br><span>Desai.</span></h1>
     <p class="hero-sub">Data Science &nbsp;·&nbsp; Machine Learning &nbsp;·&nbsp; Generative AI</p>
-    <p class="hero-desc">B.Sc. Data Science graduate from Navrachana University. I work across the ML and GenAI pipeline — from RAG applications and computer vision to forecasting and dashboards.</p>
+    <p class="hero-desc">B.Sc. Data Science graduate from Navrachana University. I build across the ML and GenAI pipeline — from production recommendation systems and RAG applications to computer vision, forecasting and analytics dashboards.</p>
     <div class="cta-row">
       <a href="#projects" class="btn btn-fill">View Projects</a>
       <a href="Diya_Desai_DataScience_General_v2.pdf" download class="btn btn-ghost">⬇ Resume</a>
@@ -413,15 +416,15 @@ footer{padding:1.5rem 4.5rem;border-top:1px solid var(--border2);display:flex;ju
   <h2 class="s-title">The story<br><em>so far</em></h2>
   <div class="about-grid">
     <div class="about-text reveal">
-      <p>I'm a recent <strong>B.Sc. Data Science</strong> graduate from Navrachana University (CGPA 8.16/10). My experience spans the full ML and GenAI lifecycle — from data preprocessing and model training to building RAG applications and interactive dashboards.</p>
-      <p>I'm most interested in <strong>Generative AI and computer vision</strong>. I've built a full-stack RAG document Q&A system using LangChain and HuggingFace, YOLOv8-based object detection, time-series forecasting, and data visualization projects across different domains.</p>
-      <p>I completed a <strong>Python Developer internship</strong> at BrainlyBeam InfoTech, where I built and maintained web applications using Django — working on backend logic, database models, and integration — alongside senior developers in a professional team setting.</p>
+      <p>I'm a recent <strong>B.Sc. Data Science</strong> graduate from Navrachana University (CGPA 8.16/10). My experience spans the full ML and GenAI lifecycle — from data preprocessing and model training to production microservices, RAG applications and interactive dashboards.</p>
+      <p>I'm most interested in <strong>Generative AI, recommender systems and computer vision</strong>. I've built a full-stack RAG document Q&A system using LangChain and HuggingFace, YOLOv8-based object detection, time-series forecasting, and data visualization projects across different domains.</p>
+      <p>I'm currently an <strong>AI/ML Intern at Easy Cater</strong>, where I built a production recommendation microservice for a live food-delivery app and an 8-module Grafana analytics dashboard with 50+ KPIs for leadership reporting.</p>
       <p>I tend to think about the <strong>problem first, tools second</strong> — understanding the context before jumping to a solution.</p>
     </div>
     <div class="detail-list reveal reveal-d1">
       <div class="d-row"><div class="d-ico">🎓</div><div><div class="d-k">Education</div><div class="d-v">B.Sc. Data Science · Navrachana University · 2026</div></div></div>
       <div class="d-row"><div class="d-ico">📊</div><div><div class="d-k">GPA</div><div class="d-v">8.16 / 10</div></div></div>
-      <div class="d-row"><div class="d-ico">💼</div><div><div class="d-k">Latest Role</div><div class="d-v">Python Developer Intern · BrainlyBeam InfoTech</div></div></div>
+      <div class="d-row"><div class="d-ico">💼</div><div><div class="d-k">Current Role</div><div class="d-v">AI/ML Intern · Easy Cater</div></div></div>
       <div class="d-row"><div class="d-ico">📧</div><div><div class="d-k">Email</div><div class="d-v">desaidiya041@gmail.com</div></div></div>
       <div class="d-row"><div class="d-ico">📍</div><div><div class="d-k">Location</div><div class="d-v">Gujarat, India</div></div></div>
     </div>
@@ -436,12 +439,21 @@ footer{padding:1.5rem 4.5rem;border-top:1px solid var(--border2);display:flex;ju
   <h2 class="s-title">Where I've<br><em>worked</em></h2>
   <div class="exp-wrap reveal">
     <div class="exp-item">
-      <div class="exp-time">Jan 2026<br>— May 2026<br><br>5 months</div>
+      <div class="exp-time">Jul 2026<br>— Present</div>
       <div class="exp-right">
         <div class="exp-dot"></div>
-        <div class="exp-title">Python Developer Intern</div>
-        <div class="exp-co">BrainlyBeam InfoTech Pvt. Ltd.</div>
-        <div class="exp-desc">Built and maintained web applications using Python and the Django framework, working across backend logic and database-driven functionality. Implemented database connections and models within Django, handling data storage, retrieval, and integration between the application and backend database. Collaborated with senior developers on application development workflows using Git/GitHub.</div>
+        <div class="exp-title">AI/ML Intern</div>
+        <div class="exp-co">Easy Cater</div>
+        <ul class="exp-list">
+          <li>Designed and built <strong>ec-recommendation</strong>, a production recommendation microservice (FastAPI, PostgreSQL/pgvector) serving personalized “you might also like” suggestions in the Easy Cater mobile app.</li>
+          <li>Trained an Item2Vec model on order-basket data as an offline nightly job, published via atomic-swap versioned vector indexes, with a tiered fallback chain (Item2Vec → order history → popularity) so cold-start users still get results.</li>
+          <li>Built a Cart Recommendation Engine for in-cart cross-selling using cart-item embedding centroids, with category-aware re-ranking across ~178K menu items and ~4,750 categories.</li>
+          <li>Automated menu-item categorization with a 3-tier pipeline (exact match → RapidFuzz → quantized Qwen2.5-0.5B via llama-cpp-python) integrated into the ETL job, removing manual labeling.</li>
+          <li>Added day-part (meal-slot) awareness with a trained classifier enforced as a SQL predicate across all recommendation tiers; validated on an isolated test database before production.</li>
+          <li>Built an 8-module Grafana analytics dashboard (50+ KPIs) on MySQL covering customers, restaurants, riders, order lifecycle, revenue, menu, retention and live alerts.</li>
+          <li>Delivered restaurant click, peak-hour, search-demand and delivery SLA analyses for catalog and operations decisions; ran a 3-tier data validation process to catch inconsistent data before production.</li>
+          <li>Benchmarked GPU memory and capacity (Qwen-Image-Edit vs FLUX.1[dev]) to inform model selection for an AI photo-enhancement pipeline for merchant food photos.</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -457,19 +469,25 @@ footer{padding:1.5rem 4.5rem;border-top:1px solid var(--border2);display:flex;ju
     <div class="sk-card reveal">
       <div class="sk-top"><span class="sk-ico">🐍</span><span class="cert-badge cb-self">Project-proven</span></div>
       <div class="sk-name">Programming</div>
-      <div class="sk-tags"><span class="stag">Python</span><span class="stag">SQL</span><span class="stag">R</span></div>
+      <div class="sk-tags"><span class="stag">Python</span><span class="stag">SQL</span><span class="stag">R</span><span class="stag">Git/GitHub</span></div>
       <div class="cert-line">Used across <span>all projects</span> + internship</div>
     </div>
     <div class="sk-card reveal">
       <div class="sk-top"><span class="sk-ico">🌐</span><span class="cert-badge cb-self">Internship-proven</span></div>
-      <div class="sk-name">Web Development</div>
-      <div class="sk-tags"><span class="stag">Django</span><span class="stag">FastAPI</span><span class="stag">REST APIs</span><span class="stag">Database Models</span></div>
-      <div class="cert-line">Applied at <span>BrainlyBeam InfoTech</span> internship</div>
+      <div class="sk-name">Backend & MLOps</div>
+      <div class="sk-tags"><span class="stag">FastAPI</span><span class="stag">Microservices</span><span class="stag">PostgreSQL</span><span class="stag">pgvector</span><span class="stag">MySQL</span><span class="stag">ETL</span><span class="stag">Batch Pipelines</span></div>
+      <div class="cert-line">Applied at <span>Easy Cater</span> internship</div>
+    </div>
+    <div class="sk-card reveal reveal-d1">
+      <div class="sk-top"><span class="sk-ico">🛒</span><span class="cert-badge cb-self">Internship-proven</span></div>
+      <div class="sk-name">Recommender Systems</div>
+      <div class="sk-tags"><span class="stag">Item2Vec</span><span class="stag">Market-Basket Analysis</span><span class="stag">Vector Similarity Search</span><span class="stag">Re-ranking</span><span class="stag">Cold-start Fallbacks</span></div>
+      <div class="cert-line">Built <span>ec-recommendation</span> for a live app</div>
     </div>
     <div class="sk-card reveal reveal-d1">
       <div class="sk-top"><span class="sk-ico">✨</span><span class="cert-badge cb-self">Flagship project</span></div>
       <div class="sk-name">Generative AI</div>
-      <div class="sk-tags"><span class="stag">RAG</span><span class="stag">LangChain</span><span class="stag">HuggingFace</span><span class="stag">Vector DBs</span><span class="stag">ChromaDB</span><span class="stag">LLM APIs</span><span class="stag">FastAPI</span><span class="stag">Prompt Engineering</span></div>
+      <div class="sk-tags"><span class="stag">RAG</span><span class="stag">LangChain</span><span class="stag">HuggingFace</span><span class="stag">ChromaDB</span><span class="stag">LLM APIs</span><span class="stag">Quantized GGUF</span><span class="stag">Diffusion Models</span><span class="stag">Prompt Engineering</span></div>
       <div class="cert-line">Built <span>Petal AI</span> — full-stack RAG Q&A system</div>
     </div>
     <div class="sk-card reveal reveal-d2">
@@ -493,7 +511,7 @@ footer{padding:1.5rem 4.5rem;border-top:1px solid var(--border2);display:flex;ju
     <div class="sk-card reveal reveal-d2">
       <div class="sk-top"><span class="sk-ico">📊</span><span class="cert-badge cb-tata">Tata Certified</span></div>
       <div class="sk-name">Data Visualization & Analytics</div>
-      <div class="sk-tags"><span class="stag">Power BI</span><span class="stag">Tableau</span><span class="stag">Excel</span><span class="stag">Matplotlib</span><span class="stag">EDA</span></div>
+      <div class="sk-tags"><span class="stag">Power BI</span><span class="stag">Grafana</span><span class="stag">Tableau</span><span class="stag">Excel</span><span class="stag">KPI Reporting</span><span class="stag">Data Validation</span><span class="stag">EDA</span></div>
       <div class="cert-line">Backed by <span>Tata Data Visualization</span> + Deloitte simulation</div>
     </div>
     <div class="sk-card reveal">
@@ -519,7 +537,49 @@ footer{padding:1.5rem 4.5rem;border-top:1px solid var(--border2);display:flex;ju
   <h2 class="s-title">Things I've<br><em>built</em></h2>
   <div class="proj-grid">
 
-    <!-- Petal AI - flagship, first -->
+    <div class="p-card featured">
+      <div class="p-body">
+        <div class="p-top">
+          <span class="p-badge pb-genai">🚀 Production</span>
+          <span class="p-badge pb-grp">Easy Cater</span>
+        </div>
+        <div class="p-name">ec-recommendation — Recommendation Microservice</div>
+        <p class="p-short">Production recommendation service for a live food-delivery app, serving personalized suggestions and in-cart cross-sells.</p>
+        <div class="p-tech"><span class="ptag">FastAPI</span><span class="ptag">PostgreSQL/pgvector</span><span class="ptag">asyncpg</span><span class="ptag">Item2Vec</span></div>
+      </div>
+      <div class="p-popup">
+        <div class="popup-divider"></div>
+        <div class="popup-head">What I did</div>
+        <ul class="popup-items">
+          <li>Trained Item2Vec nightly on order baskets; published via atomic-swap versioned vector indexes</li>
+          <li>Tiered fallback (Item2Vec → order history → popularity) for cold-start users</li>
+          <li>Cart engine with embedding centroids and category-aware re-ranking over ~178K items</li>
+          <li>Meal-slot aware results enforced as a SQL predicate across all tiers</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="p-card featured">
+      <div class="p-body">
+        <div class="p-top">
+          <span class="p-badge pb-ts">📊 Analytics</span>
+          <span class="p-badge pb-grp">Easy Cater</span>
+        </div>
+        <div class="p-name">Operations Analytics Dashboard</div>
+        <p class="p-short">8-module Grafana dashboard with 50+ KPIs turning complex operational data into management-ready reporting.</p>
+        <div class="p-tech"><span class="ptag">Grafana</span><span class="ptag">MySQL</span><span class="ptag">Power BI</span><span class="ptag">Data Validation</span></div>
+      </div>
+      <div class="p-popup">
+        <div class="popup-divider"></div>
+        <div class="popup-head">What I did</div>
+        <ul class="popup-items">
+          <li>Covered customers, restaurants, riders, order lifecycle, revenue, menu, retention and live alerts</li>
+          <li>Delivered click, peak-hour, search-demand and delivery SLA analyses for leadership</li>
+          <li>Added a 3-tier validation process that corrected inconsistent data before production</li>
+        </ul>
+      </div>
+    </div>
+
     <div class="p-card featured">
       <div class="p-body">
         <div class="p-top">
@@ -702,10 +762,10 @@ footer{padding:1.5rem 4.5rem;border-top:1px solid var(--border2);display:flex;ju
 const html=document.documentElement;
 const tog=document.getElementById('themeToggle');
 const lbl=document.getElementById('tog-lbl');
-function setTheme(t){html.dataset.theme=t;lbl.textContent=t==='dark'?'Dark':'Light';localStorage.setItem('theme',t);}
+function setTheme(t){html.dataset.theme=t;lbl.textContent=t==='dark'?'Dark':'Light';try{localStorage.setItem('theme',t);}catch(e){}}
 tog.addEventListener('click',()=>setTheme(html.dataset.theme==='dark'?'light':'dark'));
-const saved=localStorage.getItem('theme');
-if(saved)setTheme(saved);else setTheme('dark');
+let saved=null;try{saved=localStorage.getItem('theme');}catch(e){}
+setTheme(saved||'dark');
 
 const cur=document.getElementById('cur');
 const dot=cur.querySelector('.dot');
